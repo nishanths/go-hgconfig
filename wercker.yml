@@ -26,13 +26,19 @@ build:
     # at the right place in the workspace tree
     - setup-go-workspace
 
+    - script:
+      # tests depend on hg
+      name: install latest mercurial (hg)
+      code: |
+        sudo apt-get -y update
+        sudo apt-get -y install mercurial
     # Gets the dependencies
     - script:
         name: go get
         code: |
           go get -v gopkg.in/nishanths/go-hgconfig.v1
           go get -v github.com/onsi/ginkgo/ginkgo
-          go get -v github.com/onsi/ginkgo/gomega
+          go get -v github.com/onsi/gomega
 
     # Build the project
     - script:
