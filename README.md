@@ -4,7 +4,6 @@ Read Mercurial configuration (`hg config`) values in Go.
 
 Useful for finding out config values such as `ui.username`.
 
-[![Build Status](https://travis-ci.org/nishanths/go-hgconfig.svg?branch=master)](https://travis-ci.org/nishanths/go-hgconfig)
 [![GoDoc](https://godoc.org/gopkg.in/nishanths/go-hgconfig.v1?status.svg)](https://godoc.org/gopkg.in/nishanths/go-hgconfig.v1)
 
 # Install

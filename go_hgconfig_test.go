@@ -6,6 +6,7 @@ import (
 	. "github.com/onsi/gomega"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
@@ -87,6 +88,8 @@ mode = auto`)
 username`)
 				_, err := hgconfig.Get("ui.username")
 				Expect(err).To(HaveOccurred())
+				_, ok := err.(*exec.ExitError)
+				Expect(ok).To(BeTrue())
 			})
 		})
 	})
