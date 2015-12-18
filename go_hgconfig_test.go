@@ -33,7 +33,8 @@ var _ = Describe("GoHgconfig", func() {
 	var undo func()
 
 	BeforeEach(func() {
-		undo = useConfig(`[ui]
+		undo = useConfig(`
+[ui]
 username = Alice Wonderland <alice@mit.edu>
 
 [extensions]
@@ -41,8 +42,7 @@ color =
 # progress =
 
 [color]
-mode = auto
-`)
+mode = auto`)
 	})
 
 	Describe("Username", func() {

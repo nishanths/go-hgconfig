@@ -1,5 +1,5 @@
 // hgconfig provides methods to read Mercurial config items by name.
-// It provides the results normally obtained from running "hg config [name]"
+// It returns the results normally obtained from running "hg config [name]"
 package hgconfig
 
 import (

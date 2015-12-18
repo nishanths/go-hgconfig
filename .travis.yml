@@ -9,4 +9,4 @@ install:
   - go get -v gopkg.in/nishanths/go-hgconfig.v1
   - export PATH=$PATH:$HOME/gopath/bin
 
-script: go test
+script: ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --compilers=2
