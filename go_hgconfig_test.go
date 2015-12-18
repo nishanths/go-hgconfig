@@ -73,10 +73,20 @@ mode = auto`)
 		})
 
 		Context("Name does not exist", func() {
-			It("should appropriate error", func() {
+			It("should return an appropriate error", func() {
 				_, err := hgconfig.Get("extensions.progress")
 				Expect(err).To(HaveOccurred())
 				Expect(err.Error()).To(ContainSubstring("extensions.progress"))
+			})
+		})
+
+		Context("Malformed config file", func() {
+			It("should return an error", func() {
+				undo = useConfig(`
+[ui]
+username`)
+				_, err := hgconfig.Get("ui.username")
+				Expect(err).To(HaveOccurred())
 			})
 		})
 	})
