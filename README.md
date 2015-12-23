@@ -54,7 +54,7 @@ An example can also be found at [`example/main.go`](https://github.com/nishanths
 Get lets you read a `hg config` value by name.
 
 ````go
-value, _, := hgconfig.Get("merge-tools.editmerge.premerge")
+value, _ := hgconfig.Get("merge-tools.editmerge.premerge")
 ````
 
 ### Username
@@ -62,7 +62,7 @@ value, _, := hgconfig.Get("merge-tools.editmerge.premerge")
 Username is a convenience function for getting the config value for `ui.username`. This is the same as calling `hgconfig.Get("ui.username")`.
 
 ````go
-username, _, := hgconfig.Username()
+username, _ := hgconfig.Username()
 ````
 
 # Contributing
