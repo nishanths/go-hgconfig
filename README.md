@@ -69,6 +69,10 @@ username, _, := hgconfig.Username()
 
 Pull requests for new features are welcome!
 
+# Also See
+
+* [go-gitconfig](https://github.com/tcnksm/go-gitconfig)
+
 # License 
 
 go-hgconfig is licensed under the [MIT License](https://github.com/nishanths/go-hgconfig/blob/master/LICENSE)
