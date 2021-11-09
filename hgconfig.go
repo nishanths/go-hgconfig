@@ -29,6 +29,9 @@ func (err *ErrNameDoesNotExist) Error() string {
 func execHg(args []string) (string, error) {
 	cmd := exec.Command("hg", args...)
 	output, err := cmd.Output()
+	if err == nil {
+		return strings.Trim(string(output), "\n"), nil
+	}
 
 	if exitError, ok := err.(*exec.ExitError); ok {
 		if waitStatus, ok := exitError.Sys().(syscall.WaitStatus); ok {
@@ -36,10 +39,9 @@ func execHg(args []string) (string, error) {
 				return "", &ErrNameDoesNotExist{Name: args[len(args)-1]}
 			}
 		}
-		return "", err
 	}
 
-	return strings.Trim(string(output), "\n"), nil
+	return "", err
 }
 
 func execHgConfig(args ...string) (string, error) {
